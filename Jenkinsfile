@@ -8,4 +8,10 @@ node('host') {
         sh "${scannerHome}/bin/sonar-scanner"
       }
     }
+
+    stage("Quality Gate 1") {
+        steps {
+            waitForQualityGate abortPipeline: true
+        }
+    }
 }
