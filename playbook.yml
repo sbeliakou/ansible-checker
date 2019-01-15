@@ -1,0 +1,5 @@
+- hosts: localhost
+
+  tasks:
+  - shell: curl -IL localhost
+    always_run: yes
